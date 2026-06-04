@@ -1,0 +1,33 @@
+# Variables de entorno — NUNCA subir a git
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtualenv
+venv/
+env/
+.venv/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# SonarQube
+.sonar/
+sonar-project.properties
