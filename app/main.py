@@ -11,10 +11,14 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
-# CORS — en producción reemplazar con el dominio de Vercel
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],       # Actualizar con URL de Vercel en producción
+    allow_origins=[
+        "https://banking-system-frontend-sandy.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
