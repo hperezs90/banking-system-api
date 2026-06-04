@@ -2,9 +2,11 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sess
 from sqlalchemy.orm import DeclarativeBase
 from app.config import settings
 
-# Convertir URL de psycopg2 a asyncpg
-DATABASE_URL = settings.database_url.replace(
-    "postgresql://", "postgresql+asyncpg://"
+# asyncpg usa 'ssl=require' en lugar de 'sslmode=require'
+DATABASE_URL = (
+    settings.database_url
+    .replace("postgresql://", "postgresql+asyncpg://")
+    .replace("sslmode=require", "ssl=require")
 )
 
 engine = create_async_engine(
